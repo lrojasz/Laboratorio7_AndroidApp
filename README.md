@@ -1,4 +1,4 @@
-# Laboratorio 5: AndroidApp
+# Laboratorio 7: AndroidApp
 
 Este repositorio contiene todo el código necesario para realizar el laboratorio 7, sobre aplicaciones en Android.
 
