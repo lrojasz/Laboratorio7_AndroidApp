@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.widget.Button;
 import java.util.Random;
 import android.os.Handler;
+import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Declare textbox message
+        TextView message = (TextView) this.findViewById(R.id.message);
 
         // Declare ALL buttons preemptively
         Button alarmButton = (Button) this.findViewById(R.id.alarmButton);
@@ -63,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 whooshButton.setBackgroundColor(getResources().getColor(R.color.Plum));
                 startButton.setBackgroundColor(getResources().getColor(R.color.Goldenrod));
                 startButton.setEnabled(false);
+                message.setText("¡Ponga atención!");
                 // Start button delay handler
                 Handler handlerA = new Handler();
                 handlerA.postDelayed(new Runnable() {
@@ -90,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
                                                 button_show(sequence[3]);
                                                 // re-enable start button
                                                 startButton.setEnabled(true);
+                                                message.setText("Repita el patrón");
                                             }
                                         }, 2000);
                                     }
@@ -121,9 +127,11 @@ public class MainActivity extends AppCompatActivity {
                     // Outside for
                     if (fail == 0) {
                         startButton.setBackgroundColor(getResources().getColor(R.color.Green));
+                        message.setText("¡Felicidades, lo lograste!");
                     }
                     else {
                         startButton.setBackgroundColor(getResources().getColor(R.color.Red));
+                        message.setText("Falló, lo siento mucho. Intente de nuevo.");
                     }
                 }
             }
@@ -146,9 +154,11 @@ public class MainActivity extends AppCompatActivity {
                     // Outside for
                     if (fail == 0) {
                         startButton.setBackgroundColor(getResources().getColor(R.color.Green));
+                        message.setText("¡Felicidades, lo lograste!");
                     }
                     else {
                         startButton.setBackgroundColor(getResources().getColor(R.color.Red));
+                        message.setText("Falló, lo siento mucho. Intente de nuevo.");
                     }
                 }
             }
@@ -171,9 +181,11 @@ public class MainActivity extends AppCompatActivity {
                     // Outside for
                     if (fail == 0) {
                         startButton.setBackgroundColor(getResources().getColor(R.color.Green));
+                        message.setText("¡Felicidades, lo lograste!");
                     }
                     else {
                         startButton.setBackgroundColor(getResources().getColor(R.color.Red));
+                        message.setText("Falló, lo siento mucho. Intente de nuevo.");
                     }
                 }
             }
@@ -196,9 +208,11 @@ public class MainActivity extends AppCompatActivity {
                     // Outside for
                     if (fail == 0) {
                         startButton.setBackgroundColor(getResources().getColor(R.color.Green));
+                        message.setText("¡Felicidades, lo lograste!");
                     }
                     else {
                         startButton.setBackgroundColor(getResources().getColor(R.color.Red));
+                        message.setText("Falló, lo siento mucho. Intente de nuevo.");
                     }
                 }
             }
@@ -221,9 +235,11 @@ public class MainActivity extends AppCompatActivity {
                     // Outside for
                     if (fail == 0) {
                         startButton.setBackgroundColor(getResources().getColor(R.color.Green));
+                        message.setText("¡Felicidades, lo lograste!");
                     }
                     else {
                         startButton.setBackgroundColor(getResources().getColor(R.color.Red));
+                        message.setText("Falló, lo siento mucho. Intente de nuevo.");
                     }
                 }
             }
@@ -246,10 +262,11 @@ public class MainActivity extends AppCompatActivity {
                     // Outside for
                     if (fail == 0) {
                         startButton.setBackgroundColor(getResources().getColor(R.color.Green));
+                        message.setText("¡Felicidades, lo lograste!");
                     }
                     else {
                         startButton.setBackgroundColor(getResources().getColor(R.color.Red));
-
+                        message.setText("Falló, lo siento mucho. Intente de nuevo.");
                     }
                 }
             }
