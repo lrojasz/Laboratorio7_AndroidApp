@@ -1,1 +1,1 @@
-# Laboratorio7_AndroidApp
+# Laboratorio 7: AndroidApp
