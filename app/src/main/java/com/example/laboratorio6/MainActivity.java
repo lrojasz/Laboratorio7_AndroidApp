@@ -4,6 +4,7 @@ package com.example.laboratorio6;
 import androidx.appcompat.app.AppCompatActivity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.app.Activity;
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }, 2000);
                     }
-                }, 1000);
+                }, 2000);
 
             }
         });
@@ -286,16 +287,9 @@ public class MainActivity extends AppCompatActivity {
         Button whooshButton = (Button) this.findViewById(R.id.whooshButton);
         Button startButton = (Button) this.findViewById(R.id.startButton);
 
-        // Declare ALL media players preemptively
-        final MediaPlayer arcadeSound = MediaPlayer.create(this, R.raw.arcade);
-        final MediaPlayer dogSound = MediaPlayer.create(this, R.raw.dog);
-        final MediaPlayer gooseSound = MediaPlayer.create(this, R.raw.geese);
-        final MediaPlayer whooshSound = MediaPlayer.create(this, R.raw.whoosh);
-        final MediaPlayer coinSound = MediaPlayer.create(this, R.raw.coinwin);
-        final MediaPlayer alarmSound = MediaPlayer.create(this, R.raw.alarm);
-
         // Multiples ifs
         if (num == 1) {
+            final MediaPlayer arcadeSound = MediaPlayer.create(this, R.raw.arcade);
             arcadeSound.start();
             arcadeButton.setBackgroundColor(getResources().getColor(R.color.Lavender));
             arcadeButton.setEnabled(false);
@@ -309,7 +303,7 @@ public class MainActivity extends AppCompatActivity {
             Handler handler1 = new Handler();
             handler1.postDelayed(new Runnable() {
                 public void run() {
-                    arcadeSound.pause();
+                    arcadeSound.reset();
                     arcadeButton.setEnabled(true);
                     alarmButton.setClickable(true);
                     arcadeButton.setClickable(true);
@@ -322,6 +316,7 @@ public class MainActivity extends AppCompatActivity {
             }, 1500);
         }
         else if (num == 2) {
+            final MediaPlayer alarmSound = MediaPlayer.create(this, R.raw.alarm);
             alarmSound.start();
             alarmButton.setBackgroundColor(getResources().getColor(R.color.Tan));
             alarmButton.setEnabled(false);
@@ -335,7 +330,6 @@ public class MainActivity extends AppCompatActivity {
             Handler handler2 = new Handler();
             handler2.postDelayed(new Runnable() {
                 public void run() {
-                    alarmSound.pause();
                     alarmButton.setBackgroundColor(getResources().getColor(R.color.DarkGoldenrod));
                     alarmButton.setEnabled(true);
                     alarmButton.setClickable(true);
@@ -348,6 +342,7 @@ public class MainActivity extends AppCompatActivity {
             }, 1500);
         }
         else if (num == 3) {
+            final MediaPlayer gooseSound = MediaPlayer.create(this, R.raw.geese);
             gooseSound.start();
             gooseButton.setBackgroundColor(getResources().getColor(R.color.Silver));
             gooseButton.setEnabled(false);
@@ -361,7 +356,6 @@ public class MainActivity extends AppCompatActivity {
             Handler handler3 = new Handler();
             handler3.postDelayed(new Runnable() {
                 public void run() {
-                    gooseSound.pause();
                     gooseButton.setBackgroundColor(getResources().getColor(R.color.SlateGray));
                     gooseButton.setEnabled(true);
                     alarmButton.setClickable(true);
@@ -374,6 +368,7 @@ public class MainActivity extends AppCompatActivity {
             }, 1500);
         }
         else if (num == 4){
+            final MediaPlayer dogSound = MediaPlayer.create(this, R.raw.dog);
             dogSound.start();
             dogButton.setBackgroundColor(getResources().getColor(R.color.RosyBrown));
             dogButton.setEnabled(false);
@@ -387,7 +382,6 @@ public class MainActivity extends AppCompatActivity {
             Handler handler4 = new Handler();
             handler4.postDelayed(new Runnable() {
                 public void run() {
-                    dogSound.pause();
                     dogButton.setBackgroundColor(getResources().getColor(R.color.SaddleBrown));
                     dogButton.setEnabled(true);
                     alarmButton.setClickable(true);
@@ -400,6 +394,7 @@ public class MainActivity extends AppCompatActivity {
             }, 1500);
         }
         else if (num == 5) {
+            final MediaPlayer coinSound = MediaPlayer.create(this, R.raw.coinwin);
             coinSound.start();
             coinButton.setBackgroundColor(getResources().getColor(R.color.Wheat));
             coinButton.setEnabled(false);
@@ -413,7 +408,6 @@ public class MainActivity extends AppCompatActivity {
             Handler handler5 = new Handler();
             handler5.postDelayed(new Runnable() {
                 public void run() {
-                    coinSound.pause();
                     coinButton.setBackgroundColor(getResources().getColor(R.color.Gold));
                     coinButton.setEnabled(true);
                     alarmButton.setClickable(true);
@@ -426,6 +420,7 @@ public class MainActivity extends AppCompatActivity {
             }, 1500);
         }
         else if (num == 6) {
+            final MediaPlayer whooshSound = MediaPlayer.create(this, R.raw.whoosh);
             whooshSound.start();
             whooshButton.setBackgroundColor(getResources().getColor(R.color.MediumVioletRed));
             whooshButton.setEnabled(false);
@@ -439,7 +434,6 @@ public class MainActivity extends AppCompatActivity {
             Handler handler6 = new Handler();
             handler6.postDelayed(new Runnable() {
                 public void run() {
-                    whooshSound.pause();
                     whooshButton.setBackgroundColor(getResources().getColor(R.color.Plum));
                     whooshButton.setEnabled(true);
                     alarmButton.setClickable(true);
